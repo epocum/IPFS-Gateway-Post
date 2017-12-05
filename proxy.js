@@ -5,7 +5,7 @@ httpProxy = require('http-proxy');
 
 var proxy = httpProxy.createServer({
 	  target: {
-	    host: '79.61.132.152',
+	    host: 'xxx.xxx.xxx.xxx',
 	    port: 8545
 	  },
 	  ssl: {
