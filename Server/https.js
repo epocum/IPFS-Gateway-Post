@@ -7,7 +7,7 @@ var trycatch = require('trycatch')
 
 var Web3 = require('web3');
 var web3 = new Web3();
-web3 = new Web3(new Web3.providers.HttpProvider("http://79.61.132.152:8545"));
+web3 = new Web3(new Web3.providers.HttpProvider("http://xxx.xxx.xxx.xxx:8545"));
 
 // Create a new Express application.
 var app = express();
