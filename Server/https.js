@@ -7,7 +7,7 @@ var trycatch = require('trycatch')
 
 var Web3 = require('web3');
 var web3 = new Web3();
-web3 = new Web3(new Web3.providers.HttpProvider("http://xxx.xxx.xxx.xxx:8545"));
+web3 = new Web3(new Web3.providers.HttpProvider("http://79.61.132.152:8545"));
 
 // Create a new Express application.
 var app = express();
@@ -53,6 +53,8 @@ app.all('/', function(request, response) {
 app.all('/filter/:filter', function(req, resp) {
 
 		var filter =  req.params.filter;
+		var ipAdd = req.connection.remoteAddress.replace('::ffff:','');
+		
 		console.log(filter);
 		
 		trycatch(function() {
@@ -71,11 +73,11 @@ app.all('/filter/:filter', function(req, resp) {
 					  }
 					};
 		
-		
+				
 		        request(Web3options, function (error, response, body) {
 				  if (!error && response.statusCode == 200) {
 				    var message = body.result[0].payload;
-				    console.log(web3.toAscii(message));
+				    console.log('Get Conn from: ' + ipAdd + '  ' + web3.toAscii(message));
 				      }
 				});
 
