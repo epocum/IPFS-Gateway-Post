@@ -7,7 +7,7 @@ var trycatch = require('trycatch')
 
 var Web3 = require('web3');
 var web3 = new Web3();
-web3 = new Web3(new Web3.providers.HttpProvider("http://79.61.132.152:8545"));
+web3 = new Web3(new Web3.providers.HttpProvider("http://xxx.xxx.xxx.xxx:8545"));
 
 // Create a new Express application.
 var app = express();
@@ -60,7 +60,7 @@ app.all('/filter/:filter', function(req, resp) {
 		trycatch(function() {
 				        
 		        var Web3options = {
-					  uri: 'http://79.61.132.152:8545',
+					  uri: 'http://xxx.xxx.xxx.xxx:8545',
 					  method: 'POST',
 					  headers: {
 					          "content-type": "application/json",
