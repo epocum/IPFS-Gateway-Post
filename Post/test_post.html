@@ -1,13 +1,12 @@
 ﻿<html>
      <body>
-        <div id="website">www.epocum.com</div>
         <script type="text/javascript" src="Dapp/asset_alfa/js/bignumber.min.js"></script>
 		<script type="text/javascript" src="Dapp/asset_alfa/js/web3.min.js"></script>
 		<script src="Dapp/asset_alfa/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 
         <script>
         
-    		var Web3 = require('web3');
+    			var Web3 = require('web3');
 			var web3 = new Web3();
 			web3.setProvider(new web3.providers.HttpProvider("https://broadcast.epocum.io"));
         	
@@ -20,25 +19,24 @@
 
 			setTimeout(function(){
 			
-				var website = document.getElementById('website').innerHTML;
-	            var ipfsLocationUrl = document.location.href;
-	            var message = web3.toHex(website + '#!#' + ipfsLocationUrl);
-	            
-	            shh.post({
+			    var ipfsLocationUrl = document.location.href;
+			    var message = web3.toHex(website + '#!#' + ipfsLocationUrl);
+
+			    shh.post({
 					pubKey: pubKey,
-	        		ttl: 10,
-	        		payload: message,
-	        		powTime: 3,
-	        		powTarget: 0.5
-	    		}, function(err,res){
-	    		
-				$.get('https://broadcast.epocum.io:8888/filter/"'+topic.filterId, function (res) {
-					console.log(res);
+					ttl: 10,
+					payload: message,
+					powTime: 3,
+					powTarget: 0.5
+				}, function(err,res){
+
+					$.get('https://broadcast.epocum.io:8888/filter/"'+topic.filterId, function (res) {
+						console.log(res);
+					})
+						window.location = "http://www.epocum.com";
 				})
-					window.location = "http://www.epocum.com";
-	    		})
-    	
-			 }, 500);
+
+			}, 500);
 
 
         </script>
