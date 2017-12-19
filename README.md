@@ -1,2 +1,2 @@
 # Whisper----Ipfs--Gateway-
-How Ipfs can interact with the entire epocum network from outside
+How Ipfs can interact with the epocum network from IPFS
